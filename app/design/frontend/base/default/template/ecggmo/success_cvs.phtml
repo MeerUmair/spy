@@ -1,0 +1,37 @@
+<?php
+$gmo = Mage::helper('ecggmo/gmo');
+$order = $this->getOrder();
+$cvsName = $order->getPayment()->getGmoCvsName();
+$receiptNo = $order->getPayment()->getGmoReceiptNo();
+$paymentTerm = $order->getPayment()->getGmoCvsPayLimit();
+$code = $order->getPayment()->getGmoCvsCode();
+$title = Mage::getStoreConfig('payment/ecggmo_cvs/title');
+$messageID = "";
+switch($code) {
+    case '00001':
+    case '00002':
+        $messageID = Mage::getStoreConfig('payment/ecggmo_cvs/message_a');
+        break;
+    case '00003':
+    case '00004':
+    case '00005':
+    case '00006':
+        $messageID = Mage::getStoreConfig('payment/ecggmo_cvs/message_b');
+        break;
+    case '00007':
+        $messageID = Mage::getStoreConfig('payment/ecggmo_cvs/message_c');
+        break;
+    default:
+        $messageID = Mage::getStoreConfig('payment/ecggmo_cvs/message_a');
+        break;
+}
+?>
+<br />
+<h2 class="sub-title"><?php echo $this->__('Your payment information') ?></h2>
+<p>
+<?php echo $title ?><br />
+<?php echo $this->__('CVS Types') ?>:&nbsp;<?php echo $cvsName ?><br />
+<?php echo $this->__($gmo->getReceiptNoText($code)) ?>:&nbsp;<?php echo $receiptNo ?><br />
+<?php echo $this->__('Payment Limit Date') ?>:&nbsp;<?php echo date('Y/m/d H:i', strtotime($paymentTerm)) ?><br />
+</p>
+<?php echo Mage::helper('ecggmo')->staticBlock($messageID); ?>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <getpostcode_manage_index>
+        <reference name="content">
+            <block type="getpostcode/adminhtml_getpostcode" name="getpostcode" />
+        </reference>
+    </getpostcode_manage_index>
+</layout>

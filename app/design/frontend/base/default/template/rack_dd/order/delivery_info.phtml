@@ -1,0 +1,29 @@
+<?php $_order = $this->getOrder() ?>
+<?php if (($_order->getDeliveryDate() != NULL) || ($_order->getDeliveryTime() != NULL)): ?>
+<div class="col2-set order-info-box">
+    <?php if ($_order->getDeliveryDate() != NULL): ?>
+    <div class="col-1">
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->helper('deliverydate')->__('Delivery Date') ?></h2>
+            </div>
+            <div class="box-content">
+                <address><?php echo $_order->getDeliveryDate() ?></address>
+            </div>
+        </div>
+    </div>
+    <?php endif ?>
+    <?php if ($_order->getDeliveryTime() != NULL): ?>
+    <div class="col-2">
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->helper('deliverydate')->__('Delivery Time') ?></h2>
+            </div>
+            <div class="box-content">
+                <address><?php echo $_order->getDeliveryTime() ?></address>
+            </div>
+        </div>
+    </div>
+    <?php endif ?>
+</div>
+<?php endif ?>

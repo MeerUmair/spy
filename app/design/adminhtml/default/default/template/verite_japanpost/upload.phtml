@@ -1,0 +1,36 @@
+<form action="<?php echo $this->getPostUrl() ?>" name="upload" method="POST" enctype="multipart/form-data">
+    <div class="content-header">
+        <h3 class="icon-head head-products"><?php echo $this->__('Import Shipping') ?></h3>
+        <div class="content-buttons-placeholder"></div>
+    </div>
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Select file to import') ?></h4>
+        </div>
+        <div class="fieldset fieldset-wide">
+            <table class="form-list">
+                <tr>
+                    <td class="label"><?php echo $this->__('File') ?>:</td>
+                    <td class="value">
+                        <input type="file" name="file" />
+                        <div class="hint"><?php echo $this->__('Only *.csv file is allowed') ?></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="value"><input type="checkbox" name="shipping_mail" value="1" /> <?php echo $this->__('Send shipping confirmation email to customer') ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="value"><input type="checkbox" name="invoice_mail" value="1" /> <?php echo $this->__('Send invoice confirmation email to customer') ?></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="value"><button type="submit" class="button"><span><span><?php echo $this->__('Import') ?></span></span></button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <input type="hidden" name="form_key" value="<?php echo $this->getFormKey(); ?>" />
+</form>

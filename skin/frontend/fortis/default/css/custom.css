@@ -1,0 +1,974 @@
+h4    { font-size:1.45em;   line-height:1.25em;     /*16px, 20px*/ }
+p.description    { font-size:1.2em;   line-height:1.25em;     /*16px, 20px*/ }
+
+
+.extend-addtext {
+  position: relative;
+  width: 100%;
+}
+.extend-addtext-title, .extend-addtext-text {
+  position: relative;
+  width: 98%;
+  float: left;
+  min-height: 1rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.extend-addtext-title {
+  color: #f5fafc;
+  top: 10px;
+  background-color: #0995d9;
+  border-radius: 2px;
+  margin-top: 15px;
+}
+.extend-addtext-text {
+  background-color: #f5fafc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.desc-top {
+  background-color: #ebfeff;
+  padding: 10px;
+}
+.desc-middle {
+  background-color: #fffef1;
+  padding: 10px;
+}
+.desc-bottom {
+  background-color: #f0fcec;
+  padding: 10px;
+}
+
+.umi-float-left{
+	float:left;
+}
+
+.umi-float-right{
+	float:right;
+}
+.umi-text-center{
+	text-align:center;
+}
+.umi-line-height{
+	line-height:60px;
+}
+
+.search-wrapper-small .form-search .button span {
+    background: url(../../../../../skin/frontend/fortis/default/images/umi-search.png) no-repeat transparent;
+    width: 28px;
+    height: 28px;
+    opacity: 1 !important;
+}
+.header-primary {
+    padding-bottom: 0px !important;
+}
+.container.stretched {
+    margin-bottom: -20px !important;
+}
+.grid12-umi {
+    width: 10%;
+}
+.grid12-umi img {
+    width: 100%;
+}
+.umi-spec {
+    display: inline;
+    float: left;
+    margin-left: 10 !important;
+    margin-right: 0 !important;
+	margin-bottom:10px !important;
+}
+@media only screen and (max-width: 767px) and (min-width: 480px){
+.grid12-umi.mobile-grid.grid12-1 {
+    width: 15.5% !important;
+    margin-left: 1%;
+    margin-right: 1%;
+}}
+
+@media only screen and (max-width: 767px){
+	
+	.grid12-umi {
+   width: 30.5% !important;
+    margin-bottom: 2% !important;
+    margin-left: 2%;
+}
+}
+	
+	}
+	
+.header .logo {
+    margin-top: 10px;
+}
+
+.blue a{
+	background:#1762ad;
+	color:#fff !important;
+}
+
+.blue a:hover{
+	color:#fff !important;
+	background:#3a73ac;
+}
+
+
+.pink a{
+	color:#fff !important;
+	background:#e04172;
+}
+.pink a:hover{
+	color:#fff !important;
+	background:#de5680;
+}
+
+
+.skyblue a{
+	background:#1bc6e0;
+	color:#fff !important;
+}
+
+.skyblue a:hover{
+	color:#fff !important;
+	background:#40c9de;
+}
+
+.links > li > a {
+    padding: 0 1.5em !important;
+}
+.umi-header-top-right {
+    margin: 10px 0px 10px 0px;
+}
+
+.umi-header-shipping-text{
+	line-height:20px;
+}
+.umi-header-shipping-text {
+    margin-top: 16px;
+	height:20px;
+}
+
+.quick-compare {
+    float:none;
+}
+.icon.i-compare-wb {
+    display: none;
+}
+.icon.i-cart-wb {
+    display: none;
+}
+.block_header_top_left2.item.item-left {
+    border: 2px solid #7acc56;
+	padding-left: 20px;
+	margin-top: 10px;
+	margin-bottom:10px;
+}
+
+.umi-border-bottom{
+	border-bottom:1px solid #dedede;
+}
+
+span.caret {
+    display: none;
+}
+.umi-position {
+    float: left;
+    margin: 0px 20px 0px -10px;
+}
+.header-top, .header .dropdown {
+    line-height: 2.1em !important;
+}
+.umi-cart-posi {
+    margin: 2px;
+	float:right !important;
+}
+.dropdown-toggle.cover > div {
+    padding: 0px !important;
+    cursor: default;
+}
+.name {
+    color: #000;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 451px) and (min-width: 200px){ 
+	.block_header_top_left2.item.item-left {
+    border: 2px solid #7acc56;
+    padding-left: 20px;
+    margin-top: 10px !important;
+}
+}
+
+.umi-amount {
+    background: #3e673b !important;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    font-weight: bold;
+	height: 20px;
+    line-height: 20px;
+	border-radius: 100px;
+}
+a.umi-amount {
+    background: #3e673b !important;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    font-weight: bold;
+	height: 20px;
+    line-height: 20px;
+	border-radius: 100px;
+}
+
+a.summary.umi-price {
+    background: #3e673b !important;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    font-weight: bold;
+	height: 20px;
+    line-height: 20px;
+	border-radius: 100px;
+}
+.label.amount.umi-price{
+	background: #3e673b !important;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    font-weight: bold;
+	height: 20px;
+    line-height: 20px;
+	border-radius: 100px;
+}
+.empty.umi-price span.price {
+	background: #3e673b;
+    padding: 0px 10px 0px 10px;
+    color: #fff;
+    font-weight: bold;
+	height: 20px;
+    line-height: 21px;
+	border-radius: 100px;
+}
+.dropdown-toggle .label {
+    padding-right: 10px !important;
+}
+
+@media only screen and (max-width: 640px){
+.umi-position {
+    float: left;
+    margin: 13px 10px 0px -10px;
+}
+a.summary.umi-price {
+    display: none;
+}
+.umi-border-bottom {
+    border-bottom: 0px solid #dedede;
+}
+a.umi-amount {
+    display: none;
+}
+}
+.umi-full-width {
+    background: #dae9f7;
+    margin-bottom: 10px;
+}
+.container.stretched {
+    margin-bottom: -0px !important;
+}
+
+/*slider css*/
+
+.main-before-top-container {
+    background:url(../../../../../media/wysiwyg/bg/pixex.jpg) repeat #1bc6e0;
+}
+@media screen and (max-width: 1500px) and (min-width: 1024px){
+.the-slideshow-wrapper-outer {
+    padding: 10px 30px 90px 30px!important;
+	background:url(../../../../../media/wysiwyg/bg/pixel.jpg) repeat #1bc6e0;
+}
+.pagination-pos-over-bottom-centered	.owl-pagination {
+    text-align: center;
+    margin-top: 31px !important;
+    position: absolute;
+    width: 100%;
+}
+}
+/*slider css*/
+@media screen and (max-width: 1500px) and (min-width: 1024px){
+.user-menu.clearer.grid12-8.v-grid.um-fortis.um-no-icons.um-animate-icons {
+    display: none;
+}}
+.bg-umi-footer{
+	
+	background:url(../../../../../media/wysiwyg/bg/pixel.jpg) repeat #1bc6e0;
+	padding: 20px;
+	border-bottom:#0a2c4f 3px solid;
+	}
+
+.button-navy-blue{
+	background: #154576;
+    height: 10%;
+    line-height: 40px;
+	color:#fff;
+	font-size:28px;
+	font-weight:bold;
+	margin-top:20px;
+	padding: 10px;
+	}
+	
+a:hover .button-navy-blue{
+	background: #254e77;
+    height: 10%;
+    line-height: 40px;
+	color:#fff;
+	font-size:28px;
+	font-weight:bold;
+	margin-top:20px;
+	padding: 10px;
+	}
+	
+.left-margin-50-umi
+	{
+		display: inline;
+    float: left;
+  
+	margin-left: 50px !important;
+}
+@media screen and (max-width: 1500px) and (min-width: 768px){
+.umi-banner-footer-one img, .umi-banner-footer-two img, .umi-banner-footer-three img, .umi-banner-footer-four img,
+.umi-banner-footer-five img, .umi-banner-footer-six img{
+	width:100% !important;
+}
+.umi-banner-footer-one img, .umi-banner-footer-two img, .umi-banner-footer-three img {
+	margin-top:30px;
+	margin-bottom:25px;
+}
+
+.umi-banner-footer-four img,
+.umi-banner-footer-five img, .umi-banner-footer-six img{
+	margin-bottom:10px;
+	
+}
+}
+@media screen and (max-width: 769px) and (min-width: 250px){
+
+.umi-banner-footer-one img {
+	margin-top:20px;
+	
+}
+
+}
+.bg-umi-footer-two {
+	background:url(../../../../../media/wysiwyg/bg/pixel-2.jpg) repeat #daeaf9;
+	padding: 20px;
+}
+.umi-footer-banner-two-ban li{
+	display:inline;
+	
+}
+@media screen and (max-width: 1500px) and (min-width: 768px){
+.umi-container{
+	width:100% !important;
+}
+.umi-footer-banner-two-ban li img {
+    width: 23.7%;
+}
+}
+
+.block-title {
+    background: #0a2f55 !important;
+    color: #fff;
+    text-align: center;
+    border-radius: 0px !important;
+}
+.cal-day {
+    text-align: center;
+    padding: 6px 2px 6px 2px;
+}
+td.cal-day.day-work {
+    border: 1px solid #e1e1ec;
+    background: #fff;
+}
+.calendar {
+    z-index: 200;
+    background: #fff;
+}
+td.calendar-month {
+    display: none;
+}
+
+table {
+    /* border: 0; */
+    border-collapse: collapse;
+    border-spacing: 10px !important;
+    empty-cells: show;
+    font-size: 100%;
+    border-spacing: 2px !important;
+    border-collapse: separate;
+}
+.cal-day.cal-header {
+    border-bottom: 0px solid !important;
+}
+h3.umi-h3-calendar {
+    margin: -10px;
+    font-size: 14px;
+    font-weight: 500;
+	line-height: 20px;
+   
+}
+.umi-cal{
+	 border-bottom: 4px solid #2acae2;
+}
+td.cal-day.day-first {
+    background: #f4f4f4;
+}
+td.cal-day {
+    background: #f4f4f4;
+	border: 1px solid #e1e1ec;
+}
+td.cal-day.day-work {
+    border: 1px solid #e1e1ec;
+    background: #fff;
+}
+td.cal-day.day-work.day-first {
+    background: #fff;
+}
+td.cal-day.day-holiday.day-first {
+    background: #fff;
+}
+td.cal-day.day-holiday {
+    background: #fff;
+}
+table.umi-table {
+        padding: 0px 15px 20px 15px;
+}
+h4.umi-footer-h4 {
+    color: #1460ad;
+    font-weight: bolder;
+    font-size: 17px;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+	width:50%;
+}
+span.umi-box-icon {
+    font-size: 25px;
+	color:#092b52;
+}
+.umi-footer-li-space {
+    margin-left: 20px;
+    color: #60606b;
+}
+h5.umi-footer-h5 {
+    margin-top: 20px;
+    margin-bottom: 3px;
+    color: #092b52;
+}
+.block.block-calendar{
+	margin: 10 10px 0 20px;
+	padding: 0px 70px 0px 20px;
+}
+.calendar-red-do-text {
+    text-align: right;
+    padding-right: 66px;
+    color: #60606b;
+}
+.calendar-red-dot {
+    font-size: 25px;
+    color: #cc0000;
+}
+@media screen and (max-width: 1059px) and (min-width: 200px){ 
+.block.block-calendar{
+margin: 10 10px 0 20px;
+	padding: 0px 0px 0px 0px;
+}
+.calendar-red-do-text {
+    text-align: right;
+    padding-right: 0px;
+    color: #60606b;
+}
+.calendar-red-dot {
+    font-size: 25px;
+    color: #cc0000;
+}
+}
+.umi-red {
+    color: #cc0000;
+}
+.footer-primary-container> .std > .footer-primary> .grid-full> .section> .grid12-4> .std   {
+    width: 80%;
+}
+#top_rank {
+    width: 100%;
+    margin: 0 auto;
+    border: 0px solid #999 !important;
+    border-radius: 5px;}
+	
+	#tabnavi li a {
+    display: block;
+    color: #fff !important;
+    border-radius: 5px 5px 0px 0px !important;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px rgba(0,0,0,.0) !important;
+    font-size: 11px !important;
+    width: 80px !important;
+    padding: 11px 1px !important;
+	background: #1460ad !important;
+	font-weight: bold;
+}
+#tabnavi li {
+    float: left;
+    margin-left: 3px !important;
+    text-align: center;
+    margin-top: 0px !important;
+    margin-bottom: 3px !important;
+    list-style-type: none;
+}
+
+.umi-tabs-pad{
+	 
+    padding: 2px 20px !important;
+}
+
+#tabnavi li a.active {
+    background: #fff !important;
+    color: #1bc6e0 !important;
+	border-left:1px solid #1bc6e0;
+	border-right:1px solid #1bc6e0;
+	
+	}
+	
+	#tabnavi {
+    margin: 0;
+    padding: 0;
+}
+@media screen and (max-width: 1500px) and (min-width: 768px){ 
+#tabnavi li a {
+    display: block;
+    color: #fff !important;
+    border-radius: 5px 5px 0px 0px !important;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px rgba(0,0,0,.0) !important;
+    font-size: 11px !important;
+    width: 115px !important;
+    padding: 11px 1px !important;
+	background: #1460ad !important;
+	font-weight: bold;
+}}
+@media screen and (max-width: 1500px) and (min-width: 1361px){ 
+.umi-tab {
+    background: #1460ad;
+    font-size: 12px;
+    color: #fff;
+    width: 9.3%;
+    margin: 1px 1px 1px 1px;
+    padding: 1% 1.4%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    border-top: 1px solid #1460ad;
+    border-right: 1px solid #1460ad;
+    border-left: 1px solid #1460ad;
+}
+a.grid12-1.umi-tab:hover {
+    color: #1bc6e0;
+}
+a.grid12-1.umi-tab.active {
+    background: #ffffff;
+    color: #1bc6e0;
+    border-top: 1px solid #1bc6e0;
+    border-right: 1px solid #1bc6e0;
+    border-left: 1px solid #1bc6e0;
+    border-radius: 5px 5px 0px 0px;
+    width: 9.3%;
+    margin: 1px 1px 0px 1px;
+    padding: 1% 1.4%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}}
+
+@media screen and (max-width: 1361px) and (min-width: 1154px){ 
+.umi-tab {
+    background: #1460ad;
+    font-size: 12px;
+    color: #fff;
+    width: 10%;
+    margin: 1px 1px 1px 1px;
+    padding: 1% 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    border-top: 1px solid #1460ad;
+    border-right: 1px solid #1460ad;
+    border-left: 1px solid #1460ad;
+}
+a.grid12-1.umi-tab:hover {
+    color: #1bc6e0;
+}
+a.grid12-1.umi-tab.active {
+    background: #ffffff;
+    color: #1bc6e0;
+    border-top: 1px solid #1bc6e0;
+    border-right: 1px solid #1bc6e0;
+    border-left: 1px solid #1bc6e0;
+    border-radius: 5px 5px 0px 0px;
+    width: 10%;
+    margin: 1px 1px 0px 1px;
+    padding: 1% 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}}
+@media screen and (max-width: 1153px) and (min-width: 964px){ 
+.umi-tab {
+    background: #1460ad;
+    font-size: 12px;
+    color: #fff;
+    width: 9.8%;
+    margin: 1px 1px 1px 1px;
+    padding: 1% 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    border-top: 1px solid #1460ad;
+    border-right: 1px solid #1460ad;
+    border-left: 1px solid #1460ad;
+}
+a.grid12-1.umi-tab:hover {
+    color: #1bc6e0;
+}
+a.grid12-1.umi-tab.active {
+    background: #ffffff;
+    color: #1bc6e0;
+    border-top: 1px solid #1bc6e0;
+    border-right: 1px solid #1bc6e0;
+    border-left: 1px solid #1bc6e0;
+    border-radius: 5px 5px 0px 0px;
+    width: 9.8%;
+    margin: 1px 1px 0px 1px;
+    padding: 1% 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}}
+@media screen and (max-width: 963px) and (min-width: 667px){ 
+.umi-tab {
+    background: #1460ad;
+    font-size: 12px;
+    color: #fff;
+    width: 9.8%;
+    margin: 1px 1px 1px 1px;
+    padding: 1% 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    border-top: 1px solid #1460ad;
+    border-right: 1px solid #1460ad;
+    border-left: 1px solid #1460ad;
+}
+a.grid12-1.umi-tab:hover {
+    color: #1bc6e0;
+}
+a.grid12-1.umi-tab.active {
+    background: #ffffff;
+    color: #1bc6e0;
+    border-top: 1px solid #1bc6e0;
+    border-right: 1px solid #1bc6e0;
+    border-left: 1px solid #1bc6e0;
+    border-radius: 5px 5px 0px 0px;
+    width: 9.8%;
+    margin: 1px 1px 0px 1px;
+    padding: 1% 1%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}}
+@media screen and (max-width: 767px) and (min-width: 200px){ 
+.umi-tab {
+    background: #1460ad;
+    font-size: 12px;
+    color: #fff;
+    width: 9.8%;
+    margin: 1px 1px 1px 1px;
+    padding: 1% 0%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    border-top: 1px solid #1460ad;
+    border-right: 1px solid #1460ad;
+    border-left: 1px solid #1460ad;
+}
+a.grid12-1.umi-tab:hover {
+    color: #1bc6e0;
+}
+a.grid12-1.umi-tab.active {
+    background: #ffffff;
+    color: #1bc6e0;
+    border-top: 1px solid #1bc6e0;
+    border-right: 1px solid #1bc6e0;
+    border-left: 1px solid #1bc6e0;
+    border-radius: 5px 5px 0px 0px;
+    width: 9.8%;
+    margin: 1px 1px 0px 1px;
+    padding: 1% 0%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+}}
+.umi-tabs-pad{
+	 
+    padding: 0px;
+}
+.umi-heading-box{
+	background: url(../../../../../skin/frontend/fortis/default/images/h-back.png) repeat-x;
+	    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+.umi-tab-pro{
+    -webkit-box-shadow: inset 0px 0px 0px 6px rgba(237,237,237,1);
+-moz-box-shadow: inset 0px 0px 0px 6px rgba(237,237,237,1);
+box-shadow: inset 0px 0px 0px 6px rgba(237,237,237,1);
+}
+
+.umi-tab-pro img {
+    /* width: 97.7%; */
+    /* border: 5px solid; */
+    padding: 20px;
+}
+
+.umi-prod-price {
+    background: #1bc6e0;
+    color: #fff;
+    padding: 20px 10px 20px 10px;
+}
+
+
+.umi-tab-col-space {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.umi-prod-des {
+    background: #333333;
+    color: #fff;
+    padding: 20px 10px 20px 10px;
+}
+
+.umi-body-ban img{
+	width:100%;
+}
+.umi-body-ban {
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 1500px) and (min-width: 1033px){ 
+.umi-heading-box{
+	background: url(../../../../../skin/frontend/fortis/default/images/h-back.png) repeat-x;
+	    margin-top: 2%;
+    margin-bottom: 4%;
+}
+.umi-heading-box h2{
+background: #fff !important;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;}
+	
+	img.umi-icon-space {
+    padding: 2px 20px 0px 0px;
+}
+}
+@media screen and (max-width: 1035px) and (min-width: 829px){
+	.umi-heading-box{
+	background: url(../../../../../skin/frontend/fortis/default/images/h-back.png) repeat-x;
+	    margin-top: 2%;
+    margin-bottom: 4%;
+} 
+.umi-heading-box h2{
+background: #fff;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;}
+	
+	img.umi-icon-space {
+    padding: 2px 20px 0px 0px;
+}
+}
+@media screen and (max-width: 829px) and (min-width: 100px){
+	.umi-heading-box{
+	background:none !important;
+	    margin-top: 2%;
+    margin-bottom: 4%;
+} 
+.umi-heading-box h2{
+background: #fff;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;}
+	
+	img.umi-icon-space {
+    padding: 2px 20px 0px 0px;
+}
+}
+.search-wrapper-small .form-search .input-text {
+    height: 26px !important;
+    line-height: 26px !important;
+}
+.umi_footer_column_1{
+    padding: 30px 0px 0px 20px;
+	border-left: 1px dotted #b5b5b5
+    
+}
+.umi_footer_column{
+    padding: 30px 0px 0px 20px;
+	border-left: 1px dotted #b5b5b5
+   
+}
+.umi_footer_columnx{
+    padding: 30px 0px 0px 20px;
+}
+
+ul.umi-footer-links {
+    margin-right: 50px;
+}
+ul.umi-footer-links li {
+    display: inline;
+    float: right;
+    margin-right: 10px;
+	color:#0a2f55;
+	font-weight: 600;
+}
+.umi-footer-links span {
+    color: #00a0ea;
+}
+a.link-blue{
+	color:#00a0ea;
+}
+.footer-primary {
+    background: #ebf8fa !important;
+}
+.footer .item-left {
+    float: inherit !important;
+    margin-right: 0px !important;
+    text-align: center !important;
+}
+.section.clearer.mobile-inline-container {
+    padding: 0px !important;
+}
+
+a.umi-tab-news.active {
+    background: #154576;
+    color: #fff;
+    padding: 20px 10px 20px 10px;
+    width: 30%;
+    font-size: 14pt;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 600;
+	margin: 0px 0px 0px 0px;
+}
+a.umi-tab-news {
+    background: #1bc6e0;
+    color: #fff;
+    padding: 20px 10px 20px 10px;
+    width: 30%;
+    font-size: 14pt;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 600;
+	margin: 0px 0px 0px 0px;
+
+	    
+}
+div#tab1 {
+    border-top: 10px solid #154576;
+    text-align: left;
+}
+div#tab2 {
+    border-top: 10px solid #154576;
+    text-align: left;
+}
+.umi-news {
+    line-height: 2;
+    font-size: 19pt;
+    text-align: left;
+    color: #020202;
+    font-weight: 600;
+}
+div#tabcontent2 {
+    width: 101%;
+}
+span.new-prod-date {
+    float: left;
+    font-size: 12pt;
+    font-weight: 100;
+    color: #020202;
+    margin-right: 10px;
+    border-right: 1px solid #020202;
+    padding-right: 10px;
+}
+.new-prod {
+    background: #154576;
+    float: left;
+    color: #fff;
+    padding: 0px 10px 0px 10px;
+}
+.umi-prod-list {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+}
+a.grid12-1.umi-tab-news.float-ri {
+    float: right;
+}
+@media screen and (max-width: 1000px) and (min-width: 200px){
+	a.umi-tab-news.active {
+    background: #154576;
+    color: #fff;
+    padding: 20px 0px 20px 0px !important;
+    width: 30%;
+    font-size: 14pt;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 600;
+	margin: 0px 0px 0px 0px;
+}
+a.umi-tab-news {
+    background: #1bc6e0;
+    color: #fff;
+    padding: 20px 0px 20px 0px !important;
+    width: 30%;
+    font-size: 14pt;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 600;
+	margin: 0px 0px 0px 0px;
+
+	    
+}
+div#tab2 {
+    border-top: 0px solid #154576 !important;
+    text-align: left;
+}
+div#tab1 {
+    border-top: 0px solid #154576 !important;
+    text-align: left;
+}
+
+
+}
+@media screen and (max-width: 1500px) and (min-width: 1100px){
+span.line {
+border-left: 1px solid #999999;
+    height: 30px;
+    padding: 0px 0px 30px 0px;
+}
+}
+
+.umi-news img {
+    margin: 06px 10px 0px 0px;
+}

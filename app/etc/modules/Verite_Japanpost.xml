@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Verite_Japanpost>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Verite_Japanpost>
+    </modules>
+</config>

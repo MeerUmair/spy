@@ -1,0 +1,72 @@
+<dl class="sp-methods delivery-select">
+    <dt class="delivery_date" style="display: none;"><?php echo $this->helper('deliverydate')->__('Delivery Date') ?></dt>
+    <dd class="delivery_date" style="display: none;"><?php echo $this->helper('deliverydate')->getDeliveryDateInline(); ?></dd>
+    <dt class="delivery_time" style="display: none;"><?php echo $this->helper('deliverydate')->__('Delivery Time') ?></dt>
+    <dd class="delivery_time" style="display: none;"><?php echo $this->helper('deliverydate')->getDeliveryTimeInline(); ?></dd>
+</dl>
+<?php $disallowShippingMethods4Date = $this->helper('deliverydate')->getDisallowShippingMethods4Date() ?>
+<?php $disallowShippingMethods4Time = $this->helper('deliverydate')->getDisallowShippingMethods4Time() ?>
+<script type="text/javascript">
+    //<![CDATA[    
+    var deliveryDate = 'delivery_date';
+    var deliveryTime = 'delivery_time';
+    
+    <?php if ($this->helper('deliverydate')->isShowDeliveryDate()): ?>
+    <?php echo "showDelivery(deliveryDate);" ?>
+    <?php endif ?>
+
+    <?php if ($this->helper('deliverydate')->isShowDeliveryTime()): ?>
+    <?php echo "showDelivery(deliveryTime);" ?>
+    <?php endif ?>
+    
+    $$('input[type="radio"][name="order[shipping_method]"]').each(function(el){
+        if (el.checked == true) {
+            toggleDeliveryDate(el.value);
+        }        
+        
+        Event.observe(el, 'click', function(){
+            if (el.checked == true) {
+                toggleDeliveryDate(el.value);
+            }
+        });
+    });
+    
+    function hideDelivery(item) {
+        $$('.'+item).each(function(el){
+            el.setStyle({display: 'none'})
+        });
+        resetDeliveryValue(item);
+    }
+
+    function showDelivery(item) {
+        $$('.'+item).each(function(el){
+            el.setStyle({display: 'block'})
+        });
+    }
+
+    function resetDeliveryValue(itemId) {
+        $(itemId).setValue('<?php echo $this->helper('deliverydate')->__('Not specific') ?>');
+    }
+
+    function toggleDeliveryDate(value) {
+        if ($w('<?php echo $disallowShippingMethods4Date ?>').indexOf(value) != -1) {            
+            hideDelivery(deliveryDate);
+        } else {
+            <?php if ($this->helper('deliverydate')->isShowDeliveryDate()): ?>
+            <?php echo "showDelivery(deliveryDate);" ?>
+            <?php endif ?>
+        }
+
+        if ($w('<?php echo $disallowShippingMethods4Time ?>').indexOf(value) != -1) {
+            hideDelivery(deliveryTime);
+        } else {
+            <?php if ($this->helper('deliverydate')->isShowDeliveryTime()): ?>
+            <?php echo "showDelivery(deliveryTime);" ?>
+            <?php endif ?>
+        }
+    }
+    //]]>
+</script>
+<style type="text/css">
+    dl.delivery-select { border-top: 1px solid #E4E4E4; }
+</style>

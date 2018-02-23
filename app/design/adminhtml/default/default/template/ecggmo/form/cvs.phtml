@@ -1,0 +1,28 @@
+<?php $_code=$this->getMethodCode() ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li>
+        <label for="<?php echo $_code ?>_cvstypes" class="required">
+            <em>*</em><?php echo $this->__('CVS Types') ?>
+        </label>
+        <div class="input-box">
+            <select id="<?php echo $_code ?>_cvstypes" name="payment[cvs_type]" class="required-entry">
+                <option value=""><?php echo $this->__('--Please Select--')?></option>
+                <?php foreach ($this->getCvsAvailableTypes() as $name=>$val): ?>
+                    <option value="<?php echo $val ?>"><?php echo $name ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+        <p>
+        <ul>
+        <li><?php echo $this->__('Maximum amount: 299,999 yen') ?></li>
+        <li><?php //echo $this->__('You can not select Seven-Eleven payment amount is not a 200 yen or more') ?></li>
+        </ul>
+        </p>
+    </li>
+    <li>
+        <b><?php echo $this->__('Payment Limit Date') ?>&nbsp;：&nbsp;<?php echo $this->limitDate() ?></b><br />
+    </li>
+    <li>
+        <?php //echo Mage::helper('ecggmo')->staticBlock(Mage::getStoreConfig('payment/ecggmo_cvs/message')); ?>
+    </li>
+</ul>

@@ -1,0 +1,48 @@
+<table>
+    <tr>
+        <td>
+            <div id="calendar-container"></div>
+            <input type="hidden" name="<?php echo $this->getHtmlFieldName() ?>" id="<?php echo $this->getHtmlId() ?>" />
+        </td>
+    </tr>
+</table>
+<div class="clearer"></div>
+<script type="text/javascript">//<![CDATA[
+    var disabledDates = <?php echo json_encode($this->getDisabledDates()); ?>;
+    var format = '<?php echo Mage::helper('deliverydate')->getJsDateFormat() ?>';
+    <?php if ($dateInt = $this->getSelectedDate()): ?>
+    var current = '<?php echo $dateInt ?>';
+    <?php else: ?>
+    var current = false;
+    <?php endif ?>
+    Calendar2.setup({
+        cont          : "calendar-container",
+        weekNumbers   : true,
+        selectionType : Calendar2.SEL_SINGLE,
+        selection     : current,
+        showTime      : false,
+        min           : new Date(),
+        onSelect      : function() {
+            var date = this.selection.get();
+            date = Calendar2.intToDate(date);
+            var formated = Calendar2.printDate(date, format);
+
+            $('<?php echo $this->getHtmlId() ?>').setValue(formated);
+        },
+
+        disabled: function(date) {
+            <?php if (Mage::helper('deliverydate')->isExcludeSatSun()): ?>
+            if (date.getDay() == 0 || date.getDay() == 6) {
+                return true;
+            }
+            <?php endif ?>
+            var dateInt = Calendar2.dateToInt(date);
+            if (disabledDates.indexOf(dateInt) != -1) {
+                return true;
+            }
+
+            return false;
+        }
+    });
+    //]]>
+</script>

@@ -1,0 +1,79 @@
+
+<script type="text/javascript">
+    //<![CDATA[
+    function showPostcodeError(msg) {
+        clearPostcodeError();
+        $('get-address-btn').insert({after: '<div id="postcode-error" class="validation-advice">' + msg + '</div>'});
+        $('zip').addClassName('validation-failed');
+    }
+
+    function clearPostcodeError() {
+        if ($('postcode-error')) {
+            $('postcode-error').remove();
+        }
+        if ($('advice-required-entry-zip')) {
+            $('advice-required-entry-zip').remove();
+        }
+        $('zip').removeClassName('validation-failed');
+    }
+
+    /**
+     *  Load address by postcode on Customer page
+     */
+    function loadAddress()
+    {
+        //get value text input 'zip'
+        var postcode = $('zip').value;
+
+        if (!(Validation.get('IsEmpty').test(postcode) || /(^\d{7}$)/.test(postcode))) {
+            showPostcodeError("<?php echo $this->__('Please enter a valid ZIP. For example 123-4567 or 1234567.'); ?>");
+        } else {
+
+        //get url module Getpostcode
+        <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != '') :?>
+        var url = "<?php echo Mage::getUrl('', array('_secure' => true))?>" + "getpostcode/index/index/postcode/" + postcode;
+        <?php else: ?>
+        var url = "<?php echo Mage::getUrl()?>" + "getpostcode/index/index/postcode/" + postcode;
+        <?php endif; ?>
+        //process Ajax.Request
+        $('get-address-btn').addClassName('disabled');
+        clearPostcodeError();
+        new Ajax.Request(url, {
+            method: 'get',
+            onComplete: function(response) {
+                try {
+                    var json = response.responseText.evalJSON();
+                    clearPostcodeError();
+                    //set country to Japan
+                    $('country').value = 'JP';
+                    if (json != '') {
+                        //set data for text input 'street_1'
+                        //$('street_1').value = json.area;
+                        //set data for text input 'city'
+                        $('city').value = json.city_ward + json.area;
+                        //get select input 'region_id'
+                        var pref = $('region_id');
+                        for (i=0; i<pref.length; i++) {
+                            if (pref.options[i].text == json.prefecture_name) {
+                                pref.selectedIndex = i;
+                                break;
+                            }
+                        }
+                        $('city').focus();
+                    } else {
+                        $('street_1').value = '';
+                        $('city').value = '';
+                        showPostcodeError('<?php echo $this->__('Post code not found!') ?>');
+                        $('zip').select();
+                        $('zip').focus();
+                    }
+                } catch (e) {
+                }
+                $('get-address-btn').removeClassName('disabled');
+            }
+        });
+
+        }
+    }
+    //]]>
+</script>

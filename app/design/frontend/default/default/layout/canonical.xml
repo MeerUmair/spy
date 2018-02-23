@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+    <layout version="0.1.0">
+	<default>
+		<reference name="head">
+				<block type="page/html_head" name="canonical_url" as="canonical_url" template="canonical/head.phtml" />
+		</reference>
+	</default>
+
+<!--
+Product view, 
+-->
+
+    <catalog_product_view>
+		<reference name="head">	
+			<action method="unsetChild"><name>canonical_url</name></action>
+			<block type="page/html_head" name="canonical_url" as="canonical_url">
+				<action method="setTemplate"><template>canonical/head-product.phtml</template></action>
+			</block>
+		</reference>
+	</catalog_product_view>
+
+<!--
+Remove Canonincal Tag from search pages
+-->
+	<catalogsearch_result_index>
+		<reference name="head">	
+			<action method="unsetChild"><name>canonical_url</name></action>
+		</reference>
+	</catalogsearch_result_index>
+
+	<catalogsearch_advanced_index>
+		<reference name="head">	
+			<action method="unsetChild"><name>canonical_url</name></action>
+		</reference>
+	</catalogsearch_advanced_index>
+
+	<catalogsearch_advanced_result>
+		<reference name="head">	
+			<action method="unsetChild"><name>canonical_url</name></action>
+		</reference>
+	</catalogsearch_advanced_result>
+
+<!--
+Remove Canonincal Tag from checkout pages
+-->
+
+	 <checkout_cart_index>
+		<reference name="head">	
+			<action method="unsetChild"><name>canonical_url</name></action>
+		</reference>
+	</checkout_cart_index>
+
+	<checkout_onepage_index>
+		<reference name="head">	
+			<action method="unsetChild"><name>canonical_url</name></action>
+		</reference>
+	</checkout_onepage_index>
+
+</layout>

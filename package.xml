@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+    <name>Rack_Getpostcode</name>
+    <version>0.3.0</version>
+    <stability>stable</stability>
+    <license>OSL V3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension adds automatic address input assist functionality into your Magento.</summary>
+    <description>This extension adds automatic address input assist functionality into your Magento.</description>
+    <notes>0.3.0 change source js url from google code to github&#xD;
+0.2.3 fix bug.&#xD;
+0.2.2 test for CE 1.9&#xD;
+0.2.1 add enable/disable param&#xD;
+0.2.0 Change zipcode database from internal to external.&#xD;
+0.1.4 Add layout definition against customer/account/create&#xD;
+0.1.3 Change postcode data csv.&#xD;
+0.1.2 Fix install script.&#xD;
+0.1.1 Update for jp validator and 1.7&#xD;
+0.1.0 First release</notes>
+    <authors><author><name>Hirokazu Nishi</name><user>hirokazu_n</user><email>nishi@principle-works.jp</email></author></authors>
+    <date>2015-06-14</date>
+    <time>14:13:31</time>
+    <contents><target name="magecommunity"><dir name="Rack"><dir name="Getpostcode"><dir name="Block"><dir name="Adminhtml"><dir name="Getpostcode"><dir name="Edit"><file name="Form.php" hash="a7dbab02147f736fd1344e56549a4df7"/><dir name="Tab"><file name="Form.php" hash="05b47b71e23a96e0ac40c26ad8698ae2"/></dir><file name="Tabs.php" hash="bee07b8948643402efb44f07067eb380"/></dir><file name="Edit.php" hash="f0d3cb9ab1cc4dc2b76d0d4428e4552f"/><file name="Grid.php" hash="2359b4106782289d6628d601b3b08b60"/></dir><file name="Getpostcode.php" hash="2821aca2d9b4ebe67e77c950ef1deac1"/><file name="Update.php" hash="8b395188b80e0cb37e0e318400fdf64a"/></dir><file name="Getpostcode.php" hash="f8c064c09dec010947947a53f947abf2"/></dir><dir name="Helper"><file name="Data.php" hash="c985e3030ba49cbf9551817d0d3f88e0"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Postcode"><file name="Collection.php" hash="6efff49b10fedfc056046776257acd93"/></dir><file name="Postcode.php" hash="c835d163ae8eb263a54dbb9fb6533f58"/></dir><file name="Postcode.php" hash="bd2d6bba44907b5c87d60c47c7c71328"/><file name="Status.php" hash="d8d334c5fc691ef5ce562837bc7eac54"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="ImportPostCodeController.php" hash="b4ed2f7fedd2586096ac7e5b10fa5b6c"/><file name="ManagePostcodeController.php" hash="15f361ec89dbc114bdabe57809cdd09e"/></dir><file name="IndexController.php" hash="930f2501c32516e732ab5c7ef72ddc1d"/></dir><dir name="etc"><file name="config.xml" hash="ba21fb668a047c249912e69f8109ac6d"/><file name="system.xml" hash="ad3f414032a67f872d90d44ddf2414e4"/></dir><dir name="sql"><dir name="getpostcode_setup"><file name="mysql4-install-0.1.0.php" hash="bed20ef2315d94f49547880f88595adc"/><file name="mysql4-upgrade-0.1.2-0.1.3.php" hash="c0b591a2a894d2daf61f20e61b58cc0c"/></dir></dir><file name=".DS_Store" hash="fe88a5a3659e6e7dc8a584aab99c6cbe"/></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="getpostcode"><file name="ajaxzip.phtml" hash="4878444056ceb62e0286b8fbfda6576a"/><file name="ajaxzip_checkout.phtml" hash="0d781ffeaae27a01651093cb738cb6bd"/><file name="ajaxzip_customer.phtml" hash="c1ebf8853d9908febf9bdfa6939cba16"/></dir></dir><dir name="layout"><file name="rack_getpostcode.xml" hash="d8e1d55e74f3fa9feae7dd671080cbe5"/></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="rack_getpostcode.xml" hash="b471f9798c62ae5a52867551349518dd"/></dir><dir name="template"><dir name="getpostcode"><file name="update.phtml" hash="87091d4fa8da5d12a3365179c2869b2c"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="ja_JP"><file name="Rack_Getpostcode.csv" hash="70d50ea832038b329f5bfec9b1c606f0"/></dir></target><target name="mageetc"><dir name="modules"><file name="Rack_Getpostcode.xml" hash="5086c92cd0e79ecb84ae98fec0e3305d"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>5.5.99</max></php><extension><name>mbstring</name><min/><max/></extension></required></dependencies>
+</package>

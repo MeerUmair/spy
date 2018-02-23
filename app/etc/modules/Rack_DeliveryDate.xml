@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Rack_DeliveryDate>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Rack_DeliveryDate>
+    </modules>
+</config>

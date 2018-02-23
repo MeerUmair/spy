@@ -1,0 +1,30 @@
+<?php
+$_zip = $this->getZipId();
+$_region = $this->getRegionId();
+$_city = $this->getCityId();
+$_street = $this->getStreetId();
+$_button = $this->getButtonId();
+$_zipFieldSize = $this->getZipFieldSize();
+
+if ($_button == 'false' || $_button == 'auto') {
+    $_buttonId = 'false';
+} else {
+    $_buttonId = "'$_button'";
+}
+?>
+<script type="text/javascript">
+var gpc = new Getpostcode('<?php echo $this->getUrl('getpostcode/index/index', array('_secure' => Mage::app()->getStore()->isCurrentlySecure())) ?>', <?php echo $_buttonId ?>, '<?php echo $this->__('Postcode does not exists') ?>', '<?php echo $_region ?>', '<?php echo $_city ?>', '<?php echo $_street ?>', '<?php echo $_zip ?>', '<?php echo $_zip ?>1', '<?php echo $_zip ?>2');
+<?php if ($_button == 'auto'): ?>
+    gpc.appendButton('<?php echo $this->__($this->getButtonLabel()) ?>', '<?php echo $_zipFieldSize ?>');
+<?php endif ?>
+<?php if ($_button == 'auto' || $_buttonId != 'false'): ?>
+<?php if(Mage::getStoreConfig('jpcore/validator/separatepostcode')) : ?>
+    $('<?php echo $_zip ?>1').up().addClassName('field-row');
+<?php else : ?>
+    $('<?php echo $_zip ?>').up().addClassName('field-row');
+<?php endif; ?>
+<?php endif ?>
+</script>
+<style type="text/css">
+    button.getaddress { margin-left: 5px;}
+</style>

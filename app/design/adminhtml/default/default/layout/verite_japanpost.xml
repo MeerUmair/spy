@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout>
+    
+    <adminhtml_japanpost_tablerate_index>
+        <reference name="content">
+            <block type="japanpost/adminhtml_tablerate" name="tablerates">
+                <block type="japanpost/adminhtml_website_switcher" name="website_switcher" as="website_switcher">
+                    <action method="setUseConfirm"><params>0</params></action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_japanpost_tablerate_index>
+    
+    <adminhtml_japanpost_tablerate_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="japanpost/adminhtml_tablerate_grid" name="tablerates.grid"/>
+        </block>
+    </adminhtml_japanpost_tablerate_grid>
+
+    <adminhtml_japanpost_tablerate_new>
+        <update handle="japanpost_adminhtml_tablerate_edit"/>
+    </adminhtml_japanpost_tablerate_new>
+
+    <adminhtml_japanpost_tablerate_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="japanpost/adminhtml_tablerate_edit" name="tablerate_edit"></block>
+        </reference>
+    </adminhtml_japanpost_tablerate_edit>
+
+    <adminhtml_japanpost_import_index>
+        <reference name="content">
+            <block type="japanpost/adminhtml_upload" name="upload.form" template="verite_japanpost/upload.phtml" />
+        </reference>
+    </adminhtml_japanpost_import_index>
+    
+</layout>

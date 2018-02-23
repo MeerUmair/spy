@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <sections>
+        <pdf translate="label" module="pdf">
+            <label>PDF font settings</label>
+            <tab>sales</tab>
+            <sort_order>3000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <font translate="label" module="pdf">
+                    <label>PDF font settings</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <reguler>
+                            <label>Regular font file</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Please specify font file path<br/> (ex. lib/LinLibertineFont/LinLibertineC_Re-2.8.0.ttf)]]></comment>
+                        </reguler>
+                        <bold>
+                            <label>Bold font file</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Please specify font file path<br/> (ex. lib/LinLibertineFont/LinLibertineC_Re-2.8.0.ttf)]]></comment>
+                        </bold>
+                        <italic>
+                            <label>Italic font file</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Please specify font file path<br/> (ex. lib/LinLibertineFont/LinLibertineC_Re-2.8.0.ttf)]]></comment>
+                        </italic>
+                    </fields>
+                </font>
+            </groups>
+        </pdf>
+    </sections>
+</config>

@@ -1,0 +1,71 @@
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+    <h2>
+        <img src="media/wysiwyg/infortis/fortis/custom/banners/icon.png" />
+        <?php echo $this->__('New Products') ?>
+    </h2>
+    <div class="widget widget-new-products">
+        <?php
+            $slider_id = "itemslider-".time();
+            $limit = 28;
+            $img_width = 120; 
+        ?>
+        <div class="itemslider-wrapper slider-arrows1 slider-arrows1-pos-top-right slider-pagination1">
+            <div id="<?php echo $slider_id;?>" class="itemslider itemslider-responsive products-grid">
+                <?php foreach($_products->getItems() as $_product): ?>
+                    <div class="item">
+                        <?php if(strlen($_product->getCatchCopy()) > 0) {?>
+                            <?php if(strlen($_product->getCatchCopy()) > $limit) {?>
+                                <div class="product-catchcopy" style="background-color: #eeeeee; color:#656565; padding:5px; border-radius:5px; text-align:center;"><?php echo mb_substr($_product->getCatchCopy(), 0, $limit, 'UTF-8');?></div>
+<img src="https://shop.spy-online.jp/media/catalog/product/cache/1/small_image/arrow.png" style="margin-left:20px;">
+                            <?php } else {?>
+                                <div class="product-catchcopy" style="background-color:#eeeeee; color:#656565; padding:5px; border-radius:5px; text-align:center;"><?php echo $_product->getCatchCopy();?></div>
+<img src="https://shop.spy-online.jp/media/catalog/product/cache/1/small_image/arrow.png" style="margin-left:80px;">                            
+<?php }?>
+                        <?php }?>
+                        <div class="product-image-wrapper" style="border: 5px solid #d7d7d7; margin-bottom: 5px;">
+                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image" style="width: <?php echo $img_width;?>px; height: <?php echo $img_width;?>px; margin: 0 auto;">
+                                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($img_width);?>" alt="<?php echo $this->stripTags($_product->getName(), null, true);?>" />
+                            </a> </div>
+                        
+                        <h3 class="product-name" style="margin-top: 0;">
+                            <a href="<?php echo $_product->getProductUrl()     ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>)"><?php echo     $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name') ?></a>
+                        </h3>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                        <?php echo $this->getPriceHtml($_product, true, '-widget-new-grid') ?>
+                        <div class="actions">
+                            <?php if($_product->isSaleable()): ?>
+                                <button style="margin-bottom:15px;" type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product);?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                            <?php else: ?>
+                                <p style="margin-bottom:15px;" class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                            <?php endif; ?>
+                            <?php if($_product->getKijiUrl() != "") {?>
+                                <button onclick="location.href='<?php echo $_product->getKijiUrl();?>';" type="button" title="新着記事へ" class="btn-kiji button btn-cart"><span><span>　新着記事へ　</span></span></button>
+                            <?php }?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                <style>
+                    #<?php echo $slider_id;?> .btn-kiji span {background-color:#ff8429;}
+                    #<?php echo $slider_id;?> button.button span span {width: 84px;}
+                </style>
+            </div>
+        </div>
+        <script type="text/javascript">
+            jQuery(function($) {
+                var owl = $("#<?php echo $slider_id;?>");
+                owl.owlCarousel({
+                    itemsCustom: [ [0, 1], [320, 2], [480, 3], [768, 4], [960, 5] ],
+                    responsiveRefreshRate: 50,
+                    slideSpeed: 400,
+                    paginationSpeed: 500,
+                    scrollPerPage: true,
+                    stopOnHover: true,
+                    rewindNav: true,
+                    rewindSpeed: 600,
+                    pagination: false,
+                    navigation: true
+                }); // end: owl
+            });
+        </script>    
+    </div>
+<?php endif; ?>

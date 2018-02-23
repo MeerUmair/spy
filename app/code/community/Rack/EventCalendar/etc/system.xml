@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+  <tabs>
+    <calendar translate="label" module="calendar">
+      <label>Event Calender</label>
+      <sort_order>410</sort_order>
+    </calendar>
+  </tabs>
+  <sections>
+    <calendar translate="label" module="calendar">
+      <label>Event Calender</label>
+      <tab>calendar</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>120</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <calendar translate="label">
+          <label>Event Calender</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>10</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+            <holiday translate="label">
+              <label>default holiday</label>
+              <frontend_type>multiselect</frontend_type>
+              <source_model>adminhtml/system_config_source_locale_weekdays</source_model>
+              <sort_order>15</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <can_be_empty>1</can_be_empty>
+            </holiday>
+            <as_holiday>
+                <label>Show national holiday as holiday</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>16</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <can_be_empty>1</can_be_empty>
+            </as_holiday>
+          </fields>
+        </calendar>
+      </groups>
+    </calendar>
+ </sections>
+</config>

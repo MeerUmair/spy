@@ -1,0 +1,100 @@
+<!--@subject {{var store.getFrontendName()}}:ご注文No.{{var order.increment_id}} の配送No.{{var shipment.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var store.getFrontendName()":"Store Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var shipment.increment_id":"Shipment Id",
+"var order.increment_id":"Order Id",
+"var order.billing_address.format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.shipping_address.format('html')":"Shipping Address",
+"var order.shipping_description":"Shipping Description",
+"layout handle=\"sales_email_order_shipment_items\" shipment=$shipment order=$order":"Shipment Items Grid",
+"block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order":"Shipment Track Details",
+"var comment":"Shipment Comment"}
+@-->
+<!--@styles
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="email-heading">
+                        <h1>{{var store.getFrontendName()}}のご利用ありがとうございます。</h1>
+                        <p>ご注文に関する最新情報は、<a href="{{store url="customer/account/"}}"">マイページにログイン</a>することでご確認いただけます。</p>
+                    </td>
+                    <td class="store-info">
+                        <h4>ご注文に関するお問い合せは</h4>
+                        <p>
+                            {{depend store_phone}}
+                            <b>お電話:</b>
+                            <a href="tel:{{var phone}}">{{var store_phone}}</a><br>
+                            {{/depend}}
+                            {{depend store_hours}}
+                            <span class="no-link">{{var store_hours}}</span><br>
+                            {{/depend}}
+                            {{depend store_email}}
+                            <b>メール:</b> <a href="mailto:{{var store_email}}">{{var store_email}}</a>
+                            {{/depend}}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="order-details">
+            <h3>あなたのお届け情報<span class="no-link">No.{{var shipment.increment_id}}</span></h3>
+            <p>ご注文<span class="no-link">No.{{var order.increment_id}}</span></p>
+        </td>
+    </tr>
+    <tr class="order-information">
+        <td>
+            {{if comment}}
+            <table cellspacing="0" cellpadding="0" class="message-container">
+                <tr>
+                    <td>{{var comment}}</td>
+                </tr>
+            </table>
+            {{/if}}
+            {{layout handle="sales_email_order_shipment_items" shipment=$shipment order=$order}}
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="address-details">
+                        <h6>ご請求先:</h6>
+                        <p><span class="no-link">{{var order.billing_address.format('html')}}</span></p>
+                    </td>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="address-details">
+                        <h6>お届け先:</h6>
+                        <p><span class="no-link">{{var order.shipping_address.format('html')}}</span></p>
+                    </td>
+                    {{/depend}}
+                </tr>
+                <tr>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="method-info">
+                        <h6>お届け方法:</h6>
+                        <p>{{var order.shipping_description}}</p>
+                    </td>
+                    {{/depend}}
+                    <td class="method-info">
+                        <h6>お支払い方法:</h6>
+                        {{var payment_html}}
+                    </td>
+                </tr>
+            </table>
+            {{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

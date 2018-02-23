@@ -1,0 +1,8 @@
+<!-- バックエンド用 -->
+<b><?php echo $this->getMethod()->getTitle() ?></b><br />
+<p>
+<b><?php echo $this->getInfo()->getGmoCvsName() ?></b><br />
+<?php $code = $this->getInfo()->getGmoCvsCode(); ?>
+<b><?php echo $this->__($this->getReceiptNoText($code)) ?></b>&nbsp;<?php echo $this->getInfo()->getGmoReceiptNo() ?><br />
+<b><?php echo $this->__('Payment Limit Date') ?></b>&nbsp;<?php echo date('Y/m/d H:i', strtotime($this->getInfo()->getGmoCvsPayLimit())) ?><br />
+</p>

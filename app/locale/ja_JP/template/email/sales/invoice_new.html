@@ -1,0 +1,150 @@
+<!--@subject  {{var store.getFrontendName()}}: ご注文NO.{{var order.increment_id}} のご請求書No.{{var invoice.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var store.getFrontendName()":"Store Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var invoice.increment_id":"Invoice Id",
+"var order.increment_id":"Order Id",
+"var order.billing_address.format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.shipping_address.format('html')":"Shipping Address",
+"var order.shipping_description":"Shipping Description",
+"layout area=\"frontend\" handle=\"sales_email_order_invoice_items\" invoice=$invoice order=$order":"Invoice Items Grid",
+"var comment":"Invoice Comment"}
+@-->
+<!--@styles
+@-->
+
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="email-heading">
+                        <h1>{{var store.getFrontendName()}}のご利用ありがとうございます。</h1>
+                        <p>ご注文に関する最新情報は、<a href="{{store url="customer/account/"}}">マイページにログイン</a>することでご確認いただけます。</p>
+                    </td>
+                    <td class="store-info">
+                        <h4>ご注文に関するお問い合せは下記へお気軽に…！</h4>
+                        <p>
+                            {{depend store_phone}}
+                            <b>お電話:</b>
+                            <a href="tel:{{var phone}}">{{var store_phone}}</a><br>
+                            {{/depend}}
+                            {{depend store_hours}}
+                            <span class="no-link">{{var store_hours}}</span><br>
+                            {{/depend}}
+                            {{depend store_email}}
+                            <b>メール:</b> <a href="mailto:{{var store_email}}">{{var store_email}}</a>
+                            {{/depend}}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="order-details">
+<h3><div Align="left"><p>改めまして、この度は当店のご利用、ご注文頂きまして誠に有難うございます!!<br />
+数ある店舗の中から、弊社ショップをお選び下さった事に感謝申し上げます。<br />
+<br />
+ご注文時にご選択頂いたお支払方法によって、商品発送までの流れが異なります。<br />
+早速で大変恐縮ですが、【商品代金のお支払いについて】以下をご確認下さいませ。<br />
+<br />
+<br />
+<br />
+★【銀行振込】 をご指定のお客様は、<br />
+当メール下部にございます、お買い上げ【合計金額】を、下記の弊社口座へご入金下さいませ。<br />
+ご入金が確認出来次第、順次発送をさせて頂いております。<br />
+<br />
+<br />
+■■■■■■以下がお振り込み先でございます■■■■■■<br />
+<br />
+‐楽天銀行<br />
+　第二営業支店　普通　７３２５２５３（店番号 ２５２）<br />
+　 カ）リード <br />
+<br />
+■■■■■■■■■■■■■■■■■■■■■■■■■■■<br />
+<br />
+※ご注文者様のお名前でお振込み下さいます様お願い致します。<br />
+※お振込手数料につきましては、ご負担頂きます様お願い致します。<br />
+<br />
+<br />
+<br />
+★【コンビニ決済】 をご指定のお客様は、<br />
+当メールとは別に、決済確認用のメールをお送りしております。<br />
+そちらをご確認頂き、ご指定頂いた最寄りのコンビニエンスストアにて、商品代金のお支払いをお願い致します。<br />
+お支払いが確認出来次第、順次発送をさせて頂いております。<br />
+<br />
+※決済確認用のメールが届かない場合には、お手数ですが【shop@spy-online.jp】へのメール、<br />
+またはお電話 042-719-3319（午前10時 - 12時、午後1時 - 5時）にてお問い合わせ下さいませ。<br />
+<br />
+<br />
+<br />
+★【代金引換】、【クレジットカード決済】、【PayPal決済】 をご指定のお客様は、<br />
+迅速に発送を完了させますので、今暫く商品の発送、及び発送メールをお待ち下さいませ。 <br />
+<br />
+<br />
+<br />
+荷物が発送されますと、追跡用のリンクをメールでお知らせいたします。<br />
+<br />
+ご注文に関してなにか変更点や疑問点等がありましたら、<br />
+【shop@spy-online.jp】へのメール、またはお電話 042-719-3319（午前10時 - 12時、午後1時 - 5時）よりお問い合わせ下さいませ。<br />
+<br />
+<br />
+<br />
+※ご指定の日時に間に合わない場合、メール等にてご連絡する場合があります。予めご了承くださいませ。<br />
+※当メールは、ECサイト（スパイオンラインショップ⇒http://shop.spy-online.jp/）より、ご注文頂きますと自動的に送信されます。<br />
+心当たりのない場合や、ご不明な点がございましたら、お気軽に【shop@spy-online.jp】までご連絡ください。</p></div></h3>
+            <h3>あなたのご注文<span class="no-link">No.{{var order.increment_id}}</span></h3>
+            <p>ご注文日時：{{var order.getCreatedAtFormated('long')}}</p>
+        </td>
+    </tr>
+    <tr class="order-information">
+        <td>
+            {{if comment}}
+            <table cellspacing="0" cellpadding="0" class="message-container">
+                <tr>
+                    <td>{{var comment}}</td>
+                </tr>
+            </table>
+            {{/if}}
+            {{layout area="frontend" handle="sales_email_order_invoice_items" invoice=$invoice order=$order}}
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="address-details">
+                        <h6>ご請求先:</h6>
+                        <p><span class="no-link">{{var order.billing_address.format('html')}}</span></p>
+                    </td>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="address-details">
+                        <h6>お届け先:</h6>
+                        <p><span class="no-link">{{var order.shipping_address.format('html')}}</span></p>
+                    </td>
+                    {{/depend}}
+                </tr>
+                <tr>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="method-info">
+                        <h6>お届け方法:</h6>
+                        <p>{{var order.shipping_description}}</p>
+                    </td>
+                    {{/depend}}
+                    <td class="method-info">
+                        <h6>お支払い方法:</h6>
+                        {{var payment_html}}
+                    </td>
+           </tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+{{template config_path="design/email/footer"}}

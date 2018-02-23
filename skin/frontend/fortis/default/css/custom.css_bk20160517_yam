@@ -1,0 +1,2 @@
+h4    { font-size:1.45em;   line-height:1.25em;     /*16px, 20px*/ }
+p.description    { font-size:1.2em;   line-height:1.25em;     /*16px, 20px*/ }

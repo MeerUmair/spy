@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+    <layout version="0.1.0">
+	<default>
+		 <reference name="header">
+            <action method="setTemplate">
+                <template>canonical/canonical/edit/tab/header.phtml</template>
+            </action>
+          </reference> 
+	</default>
+</layout>

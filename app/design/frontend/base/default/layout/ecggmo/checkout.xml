@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <checkout_onepage_success translate="label">
+        <reference name="content">
+            <block type="ecggmo/onepage_success" name="ecggmo.success" />
+        </reference>
+    </checkout_onepage_success>
+</layout>

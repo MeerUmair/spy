@@ -1,0 +1,85 @@
+<script type="text/javascript">
+    //<![CDATA[
+    function showPostcodeError(msg, module) {
+        clearPostcodeError(module);
+        $(module + ':get-address-btn').insert({after: '<div id="' + module + ':postcode-error" class="validation-advice">' + msg + '</div>'});
+        $(module + ':postcode').addClassName('validation-failed');
+    }
+
+    function clearPostcodeError(module) {
+        if ($('advice-required-entry-' + module + ':postcode')) {
+            $('advice-required-entry-' + module + ':postcode').remove();
+        }
+        if ($(module + ':postcode-error')) {
+            $(module + ':postcode-error').remove();
+        }
+        if ($(module + ':postcode')) {
+            $(module + ':postcode').removeClassName('validation-failed');
+        }
+    }
+
+    /**
+     *  Load address by postcode on
+     *  Checkout Onepage Billing & Shipping page
+     */
+    function loadAddCheckout(module, moduleUpdater)
+    {
+        var tmpPostcode = module + ':postcode';
+        var tmpCountry  = module + ':country_id';
+        var tmpStreet1  = module + ':street1';
+        var tmpCity     = module + ':city';
+        var tmpRegionId = module + ':region_id';
+        //var tmpUpdater  = module + 'RegionUpdater';
+
+        var postcode = $(tmpPostcode).value;
+
+        if (!(Validation.get('IsEmpty').test(postcode) || /(^\d{7}$)/.test(postcode))) {
+            showPostcodeError("<?php echo $this->__('Invalid postcode format.'); ?>", module);
+        } else {
+
+        <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != '') :?>
+        var url = "<?php echo Mage::getUrl('', array('_secure' => true))?>" + "getpostcode/index/index/postcode/" + postcode;
+        <?php else: ?>
+        var url = "<?php echo Mage::getUrl()?>" + "getpostcode/index/index/postcode/" + postcode;
+        <?php endif; ?>
+        $(module + ':get-address-btn').addClassName('disabled');
+        clearPostcodeError(module);
+        new Ajax.Request( url, {
+            method: 'get',
+            onComplete: function(response) {
+                try {
+                    var json = response.responseText.evalJSON();
+
+                    $(tmpCountry).value = 'JP';
+                    //moduleUpdater.update();
+
+                    if (json != '') {
+                        //$(tmpStreet1).value = json.area;
+                        $(tmpCity).value = json.city_ward + json.area;
+
+                        var pref = $(tmpRegionId);
+                        for (i=0; i<pref.length; i++)
+                        {
+                            if (pref.options[i].text == json.prefecture_name) {
+                                pref.selectedIndex = i;
+                                break;
+                            }
+                        }
+                        $(tmpCity).focus();
+                    } else {
+                        $(tmpStreet1).value = '';
+                        $(tmpCity).value = '';
+                        showPostcodeError('<?php echo $this->__('Post code not found!') ?>', module);
+                        $(tmpPostcode).select();
+                        $(tmpPostcode).focus();
+                    }
+                } catch (e) {
+                }
+                $(module + ':get-address-btn').removeClassName('disabled');
+            }
+        });
+
+        }
+    }
+    //]]>
+</script>

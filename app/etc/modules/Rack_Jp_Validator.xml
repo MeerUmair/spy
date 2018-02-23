@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Rack_Jp_Validator>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Rack_Jp_Core/>
+            </depends>
+        </Rack_Jp_Validator>
+    </modules>
+</config>

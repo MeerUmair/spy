@@ -1,0 +1,13 @@
+<?php $disallowShippingMethods4Date = $this->helper('deliverydate')->getDisallowShippingMethods4Date() ?>
+<?php $disallowShippingMethods4Time = $this->helper('deliverydate')->getDisallowShippingMethods4Time() ?>
+<?php $shippingMethod = $this->getShippingMethod() ?>
+<?php if ($this->helper('deliverydate')->isShowDeliveryDate() && (strpos($disallowShippingMethods4Date, $shippingMethod) === false)): ?>
+<div>
+    <?php echo $this->helper('deliverydate')->__('Delivery Date') ?> - <?php echo $this->helper('deliverydate')->getDeliveryDate() ?>
+</div>
+<?php endif ?>
+<?php if ($this->helper('deliverydate')->isShowDeliveryTime() && (strpos($disallowShippingMethods4Time, $shippingMethod) === false)): ?>
+<div>
+    <?php echo $this->helper('deliverydate')->__('Delivery Time') ?> - <?php echo $this->helper('deliverydate')->getDeliveryTime() ?>
+</div>
+<?php endif ?>

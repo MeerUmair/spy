@@ -1,0 +1,135 @@
+body{
+    /*font-size: 100%;*/
+    line-height: 1.5;
+    font-family:"lucida grande", tahoma, verdana, arial, "hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;
+}
+#main1{
+	width:100%;
+	height:1600px;
+	background-color:#D7F2CF;
+	border:5px solid #82B84E;
+	padding:2px;
+	margin: auto;
+}
+#main2{
+	width:100%;
+	height:1300px;
+	background-color:#E1EDFA;
+	border:5px solid #64A1D9;
+	padding:2px;
+	margin: auto;
+}
+#main3{
+	width:100%;
+	height:500px;
+	background-color:#F6EFC6;
+	border:5px solid #DCC60A;
+	padding:2px;
+	margin: auto;
+}
+#main4{
+	width:100%;
+	height:470px;
+	background-color:#F6D6C6;
+	border:5px solid #FA7C38;
+	padding:2px;
+	margin: auto;
+}
+#main5{
+	width:100%;
+	height:630px;
+	background-color:#F9DEF9;
+	border:5px solid #C87DC0;
+	padding:2px;
+	margin: auto;
+}
+#main6{
+	width:100%;
+	height:650px;
+	background-color:#FACFA9;
+	border:5px solid #ff4c4c;
+	padding:2px;
+	margin: auto;
+}
+#one{
+	height:50px;
+	width: 10%;
+	float: left;
+	background-color: red;
+	text-align: center;
+	line-height: 50px;
+	font-size: 2em;
+	background: #333; 
+  	color: white; 
+	border-bottom-left-radius:10px;
+	border-top-left-radius:10px;
+	margin-top:10px;
+}
+#two h2{
+	height:50px;
+	width:89%;
+	float: left;
+	background:#e72760;
+	text-align:left;
+	padding-left: 1%;
+	line-height: 50px;
+        vertical-align:middle;
+	border-bottom-right-radius:10px;
+	border-top-right-radius:10px;
+	color: white; 
+	margin-top:10px;
+}
+#three{
+	height:auto;
+	width: 98.8%;
+	float: left;
+	background:#fff;
+	border:1px solid #000;
+	color: black;
+	clear: both;
+	text-align:left;
+	padding-left: 1%;
+	line-height: 20px;
+	font-size:18px;
+	margin-top:10px;
+	border-radius:4px;
+}
+#four{
+	height:auto;
+	clear: both;
+	width: 47%;	
+	float: left;
+	text-align: center;
+	font-size: 1em;
+	margin-top:10px;
+        margin-right: 2%;
+        border:3px solid #FFF;
+	margin-left:7px;
+}
+#four img{
+	width:100%;
+}
+#five{
+	height:auto;
+	width: 47%;
+	float: left;
+text-align: center;
+	font-size: 1em;
+	margin-top:10px;
+	border:3px solid #FFF;
+}
+
+#five img{
+	width:100%;
+}
+
+@media only screen 
+and (max-width : 320px) {
+        body { font-size:100%;}
+	#main{
+	width:100%;
+	height:auto;
+	margin: auto;
+	background-color: black;
+}
+}

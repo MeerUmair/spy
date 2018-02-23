@@ -1,0 +1,204 @@
+.awafpslider {
+    font-family: Verdana;
+    position: relative;
+}
+.awfpslider-horizontal .afp-slides-container {
+    margin-bottom: 5px;
+}
+
+/* Switch effect fade/appear */
+.afp-effect-fade-appear div.afp-slider-item {
+    position: absolute;
+}
+.awafpslider .afp-slider-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.awfpslider-horizontal div.afp-slider-item div.afp-thumbnail {
+    float: left;
+    height: 200px;
+    width: 200px;
+    padding-right: 10px;
+}
+.awfpslider-horizontal.afp-border div.afp-slider-item div.afp-thumbnail {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.sidebar .awfpslider-horizontal div.afp-slider-item div.afp-thumbnail {
+    float: none;
+    margin-bottom: 5px;
+    padding: 0;
+    width: auto;
+}
+.sidebar .awfpslider-horizontal.afp-border div.afp-slider-item div.afp-thumbnail {
+    padding: 10px 10px 0;
+}
+.sidebar .awfpslider-horizontal div.afp-slider-item div.afp-thumbnail img {
+    max-width: 100%;
+}
+
+.awfpslider-vertical div.afp-slider-item div.afp-thumbnail {
+    height: 190px;
+    text-align: center;
+    padding: 10px 10px 0;
+}
+.sidebar .awfpslider-vertical div.afp-slider-item div.afp-thumbnail img {
+    max-width: 100%;
+}
+.awfpslider-horizontal div.afp-slider-item div.afp-product-info {
+    overflow: hidden;
+}
+.sidebar .awfpslider-horizontal div.afp-slider-item div.afp-product-info {
+    overflow: visible;
+    padding: 0 3px;
+}
+.awfpslider-horizontal.afp-border div.afp-slider-item div.afp-product-info {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.awfpslider-vertical .afp-thumbnail .onsale-category-container-list {
+    float:none!important;
+    margin: 0 auto;
+}
+.awafpslider div.afp-slider-item div.afp-product-info .awafptitle a {
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+}
+.awafpslider div.afp-slider-item div.afp-product-info .awafptitle a:hover {
+    text-decoration: underline;
+}
+.awafpslider div.afp-slider-item div.afp-product-info .afp-details {
+    color: #666;
+    font-size: 12px;
+}
+.awfpslider-vertical div.afp-slider-item div.afp-product-info .afp-details {
+    text-align: center;
+}
+
+.awafpslider .afp-slider-controls .afp-left,
+.awafpslider .afp-slider-controls .afp-right {
+    width: 31px;
+    height: 31px;
+}
+.awafpslider .afp-slider-controls .afp-left {
+    float: left;
+    padding-left: 20px;
+}
+.awafpslider .afp-slider-controls .afp-right {
+    float: right;
+    padding-right: 20px;
+}
+.awafpslider .afp-slider-controls .afp-left .button,
+.awafpslider .afp-slider-controls .afp-right .button {
+    position: relative;
+    width: 31px;
+    height: 31px;
+    border: 0;
+    background: url("../images/sprite.png") no-repeat;
+    cursor: pointer;
+}
+.awafpslider .afp-slider-controls .afp-left .button {
+    background-position: 0 0;
+}
+.awafpslider .afp-slider-controls .afp-right .button {
+    background-position: -45px 0;
+}
+
+.awafpslider .afp-slider-controls .afp-center {
+    margin: 0 51px;
+    padding: 6px;
+    text-align: center;
+    cursor: default;
+}
+.awafpslider .afp-slider-controls .afp-center .button {
+    margin: 0 -2px;
+    width: 19px;
+    height: 19px;
+    background: url("../images/sprite.png") -40px -40px no-repeat;
+}
+.awafpslider .afp-slider-controls .afp-center .afp-s-current {
+    background-position: 0 -45px;
+}
+
+.awfpslider-horizontal .price-box {
+    float: left;
+    margin: 7px 0;
+    padding: 0;
+    text-align: center;
+    width: 150px;
+}
+
+.awfpslider-vertical .price-box {
+    text-align: center;
+    width: 100%;
+}
+
+.awafpslider .price-box .price {
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.awafpslider .price-box span, .awafpslider .price-box a {
+    color: #000;
+}
+
+.awfpslider-horizontal .afp-addtocart {
+    margin: 7px 0;
+    text-align: left;
+}
+
+.awfpslider-vertical .afp-addtocart {
+    margin: 7px 0;
+    text-align: center;
+}
+
+.awafpslider .afp-addtocart button {
+    padding: 0 16px;
+    height: 26px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #ff8400;
+    -webkit-box-shadow: 0 1px 2px 1px rgba(14, 16, 18, .2);
+            box-shadow: 0 1px 2px 1px rgba(14, 16, 18, .2);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(14, 16, 18, .25);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.awfpslider-vertical div.afp-slider-item .awafptitle {
+    text-align: center;
+}
+.awfpslider-vertical div.afp-slider-item .awafptitle a {
+    color: #000;
+    font-family: Verdana;
+    font-size: 16px;
+    margin: 7px 0;
+    text-decoration: none;
+}
+.awfpslider-vertical div.afp-slider-item .awafptitle a:hover {
+    text-decoration: underline;
+}
+
+.afp-effect-simple-slider {
+    overflow: hidden;
+    position: relative;
+}
+.afp-effect-simple-slider div.afp-slider-item {
+    float: left;
+}
+
+.afp-effect-blind-up-down div.afp-slider-item {
+    position: absolute;
+}
+
+.afp-effect-slide-up-down div.afp-slider-item {
+    position: absolute;
+}

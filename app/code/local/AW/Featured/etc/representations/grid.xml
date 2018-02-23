@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<representations>
+    <grid translate="label">
+        <label>Grid</label>
+        <version>1.0</version>
+        <block>awfeatured/representations_grid_grid</block>
+        <css>aw_featured/representations/grid/grid.css</css>
+        <js>aw_featured/representations/grid/grid.js</js>
+        <options>
+            <productsinrow translate="label">
+                <label>Products in row</label>
+                <input_type>text</input_type>
+                <default>3</default>
+                <required>1</required>
+            </productsinrow>
+            <showproductname translate="label">
+                <label>Show product name</label>
+                <input_type>select</input_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <default>1</default>
+                <required>1</required>
+            </showproductname>
+            <showdetails translate="label">
+                <label>Show details</label>
+                <input_type>select</input_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <default>0</default>
+                <required>1</required>
+            </showdetails>
+            <showprice translate="label">
+                <label>Show price</label>
+                <input_type>select</input_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <default>1</default>
+                <required>1</required>
+            </showprice>
+            <showrating translate="label">
+                <label>Show Rating</label>
+                <input_type>select</input_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <default>1</default>
+                <required>1</required>
+            </showrating>
+            <showaddtocart translate="label">
+                <label>Show "Add to cart" button</label>
+                <input_type>select</input_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <default>1</default>
+                <required>1</required>
+            </showaddtocart>
+            <width translate="label">
+                <label>Width, px</label>
+                <input_type>text</input_type>
+                <required>0</required>
+            </width>
+            <height translate="label">
+                <label>Height, px</label>
+                <input_type>text</input_type>
+                <required>0</required>
+            </height>
+            <background_color translate="label">
+                <label>Background color</label>
+                <default>#ffffff</default>
+                <input_type>text</input_type>
+                <required>0</required>
+            </background_color>
+            <border translate="label">
+                <label>Border</label>
+                <default>1px #c4c1bc solid</default>
+                <input_type>text</input_type>
+                <required>0</required>
+            </border>
+            <border_radius translate="label">
+                <label>Border-radius, px</label>
+                <default>5</default>
+                <input_type>text</input_type>
+                <required>0</required>
+            </border_radius>
+            <showoutofstock translate="label">
+                <label>Show out of stock products</label>
+                <input_type>select</input_type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <default>0</default>
+                <required>1</required>
+            </showoutofstock>
+        </options>
+    </grid>
+</representations>

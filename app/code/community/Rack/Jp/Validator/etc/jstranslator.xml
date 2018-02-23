@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<jstranslator>
+    <!-- validation.js -->
+    <validate-katakana translate="message" module="validator">
+        <message>Please use full width Katakana only in this field.</message>
+    </validate-katakana>
+    <validate-hiragana translate="message" module="validator">
+        <message>Please use Hiragana only in this field.</message>
+    </validate-hiragana>
+    <validate-post translate="message" module="validator">
+        <message>The length of Zip/Postalcode is %d digits and only numbers are allowed.</message>
+    </validate-post>
+    <validate-post2 translate="message" module="validator">
+        <message>The length of Zip/Postalcode is %d digits and only numbers and %s are allowed.</message>
+    </validate-post2>
+</jstranslator>

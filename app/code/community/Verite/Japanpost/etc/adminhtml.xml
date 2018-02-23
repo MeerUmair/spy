@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <japanpost_shipping translate="title" module="japanpost">
+            <title>Japanpost</title>
+            <sort_order>85</sort_order>
+            <children>
+                <import translate="title" module="japanpost">
+                    <title>Import Shipping</title>
+                    <sort_order>10</sort_order>
+                    <action>adminhtml/japanpost_import</action>
+                </import>
+                <rate translate="title" module="japanpost">
+                    <title>Rate Management</title>
+                    <sort_order>20</sort_order>
+                    <action>adminhtml/japanpost_tablerate</action>
+                </rate>
+                <log translate="title" module="japanpost">
+                    <title>Log</title>
+                    <sort_order>30</sort_order>
+                    <action>adminhtml/japanpost_log</action>
+                </log>
+            </children>
+        </japanpost_shipping>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <japanpost_shipping translate="title" module="japanpost">
+                        <title>Japanpost</title>
+                        <sort_order>600</sort_order>
+                        <children>
+                            <import translate="title">
+                                <title>Import Shipping</title>
+                                <sort_order>0</sort_order>
+                            </import>
+                            <export translate="title">
+                                <title>Export Shipping</title>
+                                <sort_order>10</sort_order>
+                            </export>
+                            <rate translate="title">
+                                <title>Rate Management</title>
+                                <sort_order>20</sort_order>
+                            </rate>
+                            <log translate="title">
+                                <title>Export/Import Log View</title>
+                                <sort_order>30</sort_order>
+                            </log>
+                        </children>
+                    </japanpost_shipping>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <japanpost translate="title" module="japanpost">
+                                        <title>japanpost Section</title>
+                                    </japanpost>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

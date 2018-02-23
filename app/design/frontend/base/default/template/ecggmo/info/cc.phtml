@@ -1,0 +1,15 @@
+<!-- フロント用 -->
+<?php echo $this->getMethod()->getTitle() ?><br />
+<?php $ccCardSeq = $this->getInfo()->getGmoCcCardSeq() ?>
+<?php if($ccCardSeq == 999999) { ?>
+    <b><?php echo $this->__('Credit Card Type') ?>:</b><br />
+    <?php echo $this->__($this->htmlEscape($this->getCcTypeName())) ?><br />
+    <b><?php echo $this->__('Credit Card Number') ?>:</b><br />
+    <?php echo $this->__('xxxx-%s', $this->htmlEscape($this->getInfo()->getCcLast4())) ?><br />
+    <b><?php echo $this->__('Expiration Date') ?>:</b><br />
+    <?php echo $this->__('%s/%s', $this->htmlEscape($this->getCcExpMonth()), $this->htmlEscape($this->getInfo()->getCcExpYear())) ?><br />
+<?php }else{ ?>
+    <b><?php echo $this->__('Use Credit Card Info') ?>:</b><br />
+    <?php echo $this->getInfo()->getGmoCcCardData() ?><br />
+<?php } ?>
+

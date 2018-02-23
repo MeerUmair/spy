@@ -1,0 +1,40 @@
+<!--@subject ようこそ、{{var customer.name}}様! @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"htmlescape var=$customer.name":"Customer Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var customer.email":"Customer Email",
+"htmlescape var=$customer.password":"Customer Password"}
+@-->
+
+<!--@styles
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="action-content">
+            <h1>{{htmlescape var=$customer.name}} 様</h1>
+            <p>{{var store.getFrontendName()}} へようこそ。私どものサイトにログインしていただくには、すべてのページの上部にある<a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">ログイン</a>または<a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">マイアカウント</a>をクリックし、メールアドレスとパスワードを入力してください。</p>
+            <p>
+                ログインする様メッセージが表示されたら、次の値を入力してください:<br/>
+                <strong>メールアドレス:</strong> {{var customer.email}}<br/>
+                <strong>パスワード:</strong> {{htmlescape var=$customer.password}}<p>
+            <p>ログインされますと以下の機能をご使用いただけます:</p>
+            <ul>
+                <li>購入する際、より簡単にご注文いただけます。</li>
+                <li>ご注文の状況をいつでもご確認できます。</li>
+                <li>過去ご注文を見ることができます。</li>
+                <li>アカウントの情報を変更することができます。</li>
+                <li>パスワードを変更することができます。</li>
+                <li>複数の住所を保存できます (複数の家族や友人に配送する場合に!)</li>
+            </ul>
+            <p>アカウントに対するご質問やその他問題がありましたら、<a href="mailto:{{config path='trans_email/ident_support/email'}}" style="color:#1E7EC8;">{{config path='trans_email/ident_support/email'}}</a>、または電話番号 {{config path='general/store_information/phone'}} まで、お気軽にお問い合わせください。</p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

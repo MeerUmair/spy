@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layout>
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>rack_dd/jscal2/css/jscal2.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js_css</type><name>rack_dd/jscal2/css/win2k/win2k.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>rack_dd/jscal2/jscal2.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>rack_dd/jscal2/lang/jp.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+        </reference>
+    </checkout_onepage_index>
+    <checkout_onepage_additional>
+        <reference name="root">
+            <action method="setDontDisplayContainer">
+                <param>1</param>
+            </action>
+            <action method="setTemplate">
+                <template>rack_dd/onepage/additional.phtml</template>
+            </action>
+            <block type="checkout/onepage_shipping_method_available" name="deliverydate.form" template="rack_dd/form.phtml"/>
+        </reference>
+    </checkout_onepage_additional>
+
+    <checkout_multishipping_shipping>
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>rack_dd/jscal2/css/jscal2.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js_css</type><name>rack_dd/jscal2/css/win2k/win2k.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>rack_dd/jscal2/jscal2.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+            <action method="addItem"><type>js</type><name>rack_dd/jscal2/lang/jp.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
+        </reference>
+        <!-- Mage_Checkout -->
+        <reference name="root">
+            <block type="checkout/multishipping_shipping" name="checkout_shipping" template="rack_dd/multishipping/shipping.phtml">
+                <action method="addItemRender">
+                    <type>default</type>
+                    <block>checkout/cart_item_renderer</block>
+                    <template>checkout/multishipping/item/default.phtml</template>
+                </action>
+                <action method="addItemRender">
+                    <type>grouped</type>
+                    <block>checkout/cart_item_renderer_grouped</block>
+                    <template>checkout/multishipping/item/default.phtml</template>
+                </action>
+                <action method="addItemRender">
+                    <type>configurable</type>
+                    <block>checkout/cart_item_renderer_configurable</block>
+                    <template>checkout/multishipping/item/default.phtml</template>
+                </action>
+                <block type="checkout/multishipping_billing_items" name="checkout_billing_items" template="checkout/multishipping/billing/items.phtml">
+                    <action method="addItemRender">
+                        <type>default</type>
+                        <block>checkout/cart_item_renderer</block>
+                        <template>checkout/multishipping/item/default.phtml</template>
+                    </action>
+                    <action method="addItemRender">
+                        <type>grouped</type>
+                        <block>checkout/cart_item_renderer_grouped</block>
+                        <template>checkout/multishipping/item/default.phtml</template>
+                    </action>
+                    <action method="addItemRender">
+                        <type>configurable</type>
+                        <block>checkout/cart_item_renderer_configurable</block>
+                        <template>checkout/multishipping/item/default.phtml</template>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </checkout_multishipping_shipping>
+
+    <sales_order_view translate="label">
+        <reference name="my.account.wrapper">
+            <block type="sales/order_info" as="info" name="sales.order.info">
+                <block type="sales/order_info_buttons" as="buttons" name="sales.order.info.buttons" />
+            </block>
+            <block type="sales/order_view" name="sales.order.view" template="rack_dd/order/view.phtml">
+                <block type="sales/order_view" as="delivery" name="sales.order.delivery" template="rack_dd/order/delivery_info.phtml"/>
+                <block type="sales/order_items" name="order_items" template="installfee/sales/order/items.phtml">
+                    <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>installfee/sales/order/items/renderer/default.phtml</template></action>
+                    <action method="addItemRender"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>installfee/sales/order/items/renderer/default.phtml</template></action>
+                    <block type="sales/order_totals" name="order_totals" template="sales/order/totals.phtml">
+                        <action method="setLabelProperties"><value>colspan="5" class="a-right"</value></action>
+                        <action method="setValueProperties"><value>class="last a-right"</value></action>
+                        <block type="tax/sales_order_tax" name="tax" template="tax/order/tax.phtml" />
+                        <block name="daibiki_fee" type="daibiki/daibiki_totals" before="grand_total"/>
+                    </block>
+                </block>
+            </block>
+        </reference>
+        <reference name="sales.order.info">
+            <action method="addLink" translate="label" module="sales"><name>view</name><path></path><label>Order Information</label></action>
+            <action method="addLink" translate="label" module="sales"><name>invoice</name><path>*/*/invoice</path><label>Invoices</label></action>
+            <action method="addLink" translate="label" module="sales"><name>shipment</name><path>*/*/shipment</path><label>Shipments</label></action>
+            <action method="addLink" translate="label" module="sales"><name>creditmemo</name><path>*/*/creditmemo</path><label>Refunds</label></action>
+        </reference>
+    </sales_order_view>
+
+    <checkout_onepage_progress>
+        <!-- Mage_Checkout -->
+        <block type="checkout/onepage_progress" name="root" output="toHtml" template="rack_dd/onepage/progress.phtml">
+            <block type="checkout/onepage_progress" name="delivery_info" template="rack_dd/onepage/delivery_progress.phtml"/>
+            <block type="checkout/onepage_payment_info" name="payment_info">
+                <action method="setInfoTemplate">
+                    <method></method>
+                    <template></template>
+                </action>
+            </block>
+        </block>
+    </checkout_onepage_progress>
+
+    <checkout_onepage_progress_shipping_method>
+        <!-- Mage_Checkout -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <block type="checkout/onepage_progress" name="root" output="toHtml" template="rack_dd/onepage/shipping_method.phtml">
+            <block type="checkout/onepage_progress" name="delivery_info" template="rack_dd/onepage/delivery_progress.phtml"/>
+            <action method="setInfoTemplate"><method></method><template></template></action>
+        </block>
+    </checkout_onepage_progress_shipping_method>
+
+    <!--
+    Multi address shipping checkout overview
+    -->
+
+    <checkout_multishipping_overview translate="label">
+        <!-- Mage_Checkout -->
+        <reference name="root">
+            <block type="checkout/multishipping_overview" name="checkout_overview" template="rack_dd/multishipping/overview.phtml">
+                <action method="addItemRender">
+                    <type>default</type>
+                    <block>checkout/cart_item_renderer</block>
+                    <template>checkout/multishipping/item/default.phtml</template>
+                </action>
+                <action method="addItemRender">
+                    <type>grouped</type>
+                    <block>checkout/cart_item_renderer_grouped</block>
+                    <template>checkout/multishipping/item/default.phtml</template>
+                </action>
+                <action method="addItemRender">
+                    <type>configurable</type>
+                    <block>checkout/cart_item_renderer_configurable</block>
+                    <template>checkout/multishipping/item/default.phtml</template>
+                </action>
+                <action method="addRowItemRender">
+                    <type>grouped</type>
+                    <block>checkout/cart_item_renderer_grouped</block>
+                    <template>checkout/multishipping/overview/item.phtml</template>
+                </action>
+                <action method="addRowItemRender">
+                    <type>configurable</type>
+                    <block>checkout/cart_item_renderer_configurable</block>
+                    <template>checkout/multishipping/overview/item.phtml</template>
+                </action>
+                <block type="checkout/multishipping_payment_info" name="payment_info">
+                    <action method="setInfoTemplate">
+                        <method></method>
+                        <template></template>
+                    </action>
+                </block>
+                <block type="checkout/agreements" name="checkout.multishipping.agreements" as="agreements" template="checkout/multishipping/agreements.phtml"/>
+                <block type="checkout/cart_totals" name="totals"/>
+                <block type="core/text_list" name="checkout.multishipping.overview.items.after" as="items_after" translate="label">
+                    <label>Overview Items After</label>
+                </block>
+            </block>
+        </reference>
+    </checkout_multishipping_overview>
+
+    <!--
+    Multi address shipping checkout success
+    -->
+</layout>

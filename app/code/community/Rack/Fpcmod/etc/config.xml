@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rack_Fpcmod>
+            <version>1.0.0</version>
+        </Rack_Fpcmod>
+    </modules>
+    <global>
+        <models>
+            <fpcmod>
+                <class>Rack_Fpcmod_Model</class>
+            </fpcmod>
+        </models>
+        <events>
+            <fpc_helper_collect_params>
+                <observers>
+                    <modify_params>
+                        <class>fpcmod/observer</class>
+                        <type>singleton</type>
+                        <method>modifyParams</method>
+                    </modify_params>
+                </observers>
+            </fpc_helper_collect_params>
+        </events>
+    </global>
+</config>

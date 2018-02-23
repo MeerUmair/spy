@@ -1,0 +1,14 @@
+<!-- フロント用 -->
+<?php 
+echo $this->getMethod()->getTitle().'<br />';
+$gmo = Mage::helper('ecggmo/gmo');
+$name = $gmo->getCvsName($this->getInfo()->getGmoCvsCode());
+echo $name.'<br />';
+$receiptNo = $this->getInfo()->getGmoReceiptNo();
+if(!empty($receiptNo)) {
+    $code = $this->getInfo()->getGmoCvsCode();
+    echo $this->__($this->getReceiptNoText($code)).'&nbsp;: '.$receiptNo.'<br />';
+    echo $this->__('Payment Limit Date').'&nbsp;: '.date('Y/m/d H:i', strtotime($this->getInfo()->getGmoCvsPayLimit())).'<br />';
+}
+?>
+

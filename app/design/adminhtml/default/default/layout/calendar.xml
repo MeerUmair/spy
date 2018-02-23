@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <calendar_adminhtml_event_index>
+    <reference name="content">
+      <block type="calendar/adminhtml_calendar" name="calendar.adminhtml.calendar"/>
+    </reference>
+  </calendar_adminhtml_event_index>
+  <calendar_adminhtml_event_edit>
+  </calendar_adminhtml_event_edit>
+</layout>

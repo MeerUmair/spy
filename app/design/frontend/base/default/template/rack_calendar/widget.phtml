@@ -1,0 +1,58 @@
+<?php 
+
+    $_months = $this->buildDays();
+    $_names = $this->getDayNames();
+    $_details = $this->getHolidaysWithDetail();
+?>
+<div class="block block-calendar">
+<div class="block-title umi-cal">
+    <h3 class="umi-h3-calendar"><?php echo $this->__('Calendar')?></h3>
+</div>
+    <table class="calendar umi-table" width="100%" cellspacing="1" border="0" cellpadding="0" bordercolor="#CCCCCC">
+        <?php foreach ($_months as $_m => $_days): ?>
+        <tr class="month">
+            <td class="calendar-month"><?php echo sprintf('%d', $_m); ?></td>
+            <td>
+                <table width="100%" cellspacing="1" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <?php foreach ($_names as $_n): ?>
+                        <th class="cal-day cal-header"><?php echo $this->__($_n) ?></th>
+                        <?php endforeach ?>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php while($_d = $_days->fetch()): ?>
+                    <?php if ($_d->isFirst()): ?>
+                    <tr>
+                    <?php endif ?>
+                    <?php if ($_d->isEmpty()): ?>
+                        <td class="cal-day <?php if ($_d->isFirst()) { echo 'day-first'; } elseif ($_d->isLast()) { echo 'day-last'; } ?>">&nbsp;</td>
+                    <?php else: ?>
+                        <td class="cal-day <?php echo $this->getHolidayCssClass($_d) ?> <?php if ($_d->isFirst()) { echo 'day-first'; } elseif ($_d->isLast()) { echo 'day-last'; } if ($_d->isToday()) { echo ' day-current';} ?>">
+                            <?php echo $_d->thisDay() ?>
+                        </td>
+                    <?php endif ?>
+                    <?php if ($_d->isLast()): ?>
+                    </tr>
+                    <?php endif ?>
+                    <?php endwhile ?>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <?php endforeach ?>
+    </table>
+    <?php if ($_details->count()): ?>
+    <ul>
+       <?php foreach ($_details->getItems() as $_item): ?>
+        <?php if ($_item->getDayComment() != ''): ?>
+        <li class="<?php //echo $this->getHolidayCssClass($_item->getDay()) ?>">
+            <span class="date-part"><?php echo $_item->getDay() ?></span>
+            <span class="date-comment"><?php echo $_item->getDayComment() ?></span>
+        </li>
+        <?php endif ?>
+       <?php endforeach; ?>
+    </ul>
+    <?php endif ?>
+</div>

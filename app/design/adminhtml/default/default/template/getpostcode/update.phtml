@@ -1,0 +1,32 @@
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?php echo $this->__('Import Postcode')?></h3></td>
+        </tr>
+    </table>
+</div>
+<div class="entry-edit">
+    <form id="edit_form" enctype="multipart/form-data" name="edit_form" method="post" action="<?php echo $this->getUrl('*/*/update')?>">
+        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+        <fieldset id="my-fieldset">
+            <span class="field-row">
+                <label for="form_file"> <?php echo $this->__('Data file')?>: <span class="required">*</span> </label>
+                <input type="file" id="form_file" size="40" class="input-text required-entry" name="form_file" />
+            </span>
+            
+            <br />
+            <button onclick="editForm.submit()" class="scalable save" type="button"><span><?php echo $this->__('Import')?></span></button>
+        </fieldset>
+        <span style="display:none">
+        <select id="csv_delimiter" class="input-option required-entry" name="csv_delimiter">
+            <option value="," selected><?php echo $this->__('Commas')?></option>
+            <option value=";"><?php echo $this->__('Semi-colon')?></option>
+        </select>
+        <input type="checkbox" id="csv_header" class="input-text" name="csv_header" value="1" checked="checked" />
+        </span>
+    </form>
+</div>
+<script type="text/javascript">
+    var editForm = new varienForm('edit_form');
+
+</script>

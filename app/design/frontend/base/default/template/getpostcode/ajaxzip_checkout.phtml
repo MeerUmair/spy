@@ -1,0 +1,23 @@
+<?php if(Mage::getStoreConfig('customer/address/getpostcode')) : ?>
+    <?php
+    $_zip = $this->getZipId();
+    $_postcode = $this->getZipName();
+    $_postcode1 = $this->getZipName1();
+    $_postcode2 = $this->getZipName2();
+    $_region = $this->getRegionId();
+    $_city = $this->getCityId();
+    $_street = $this->getStreetId();
+	//$_street = "street[]";
+    ?>
+    <script type="text/javascript">
+        <?php if(Mage::getStoreConfig('jpcore/validator/separatepostcode')) : ?>
+        Event.observe('<?php echo $_zip ?>2', 'keyup',  function (e) {
+            AjaxZip3.zip2addr('<?php echo $_postcode1 ?>','<?php echo $_postcode2 ?>','<?php echo $_region?>','<?php echo $_city?>','<?php echo $_street?>');
+        });
+        <?php else : ?>
+        Event.observe('<?php echo $_zip ?>', 'keyup', function (e) {
+            AjaxZip3.zip2addr('<?php echo $_postcode ?>','','<?php echo $_region?>','<?php echo $_city?>','<?php echo $_street?>');
+        });
+        <?php endif; ?>
+    </script>
+<?php endif;?>

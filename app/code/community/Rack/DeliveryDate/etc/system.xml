@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <sections>
+        <deliverydate translate="label" module="deliverydate">
+            <label>Delivery Date Settings</label>
+            <tab>sales</tab>
+            <sort_order>2000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <date translate="label" module="deliverydate">
+                    <label>Date settings</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable>
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <maxday>
+                            <label>Maximum days</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </maxday>
+                        <display_format>
+                            <label>Date format</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Format code: Y = year in four digits, y = year in two digit. m = month. d = day. Ex: Y年m月d日</comment>
+                        </display_format>
+                        <exclude_holiday>
+                            <label>Exclude Holiday?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </exclude_holiday>
+                        <holidays>
+                            <label>Holiday List</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[One day per line. Date format: yyyy-mm-dd. Ex: <br/>2011-10-10<br />2011-11-23]]></comment>
+                            <depends><exclude_holiday>1</exclude_holiday></depends>
+                        </holidays>
+                        <exclude_satsun>
+                            <label>Exclude Saturday and Sunday?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </exclude_satsun>
+                        <disallowspecificshippingmethods translate="label">
+                            <label>Disallow specific shipping methods</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>110</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </disallowspecificshippingmethods>
+                        <disallowedshippingmethods translate="label">
+                            <label>Disallowed shipping methods</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>120</sort_order>
+                            <source_model>deliverydate/source_method</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </disallowedshippingmethods>
+                        <use_calendar>
+                            <label>Use calendar for delivery date</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Using calendar instead of selectbox.</comment>
+                        </use_calendar>
+                    </fields>
+                </date>
+                <minday>
+                    <label>Mininum required days settings</label>
+                    <sort_order>15</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <type>
+                            <label>Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>deliverydate/source_minday</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </type>
+                        <minday_fix>
+                            <label>Minimum require days after place order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>1</type></depends>
+                        </minday_fix>
+                        <break_time>
+                            <label>AM/PM break time</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>ex: 13:00</comment>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </break_time>
+                        <mon_am>
+                            <label>Monday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </mon_am>
+                        <mon_pm>
+                            <label>Monday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </mon_pm>
+                        <tue_am>
+                            <label>Tuesday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </tue_am>
+                        <tue_pm>
+                            <label>Tuesday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </tue_pm>
+                        <wed_am>
+                            <label>Wednesday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </wed_am>
+                        <wed_pm>
+                            <label>Wednesday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </wed_pm>
+                        <thu_am>
+                            <label>Thursday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </thu_am>
+                        <thu_pm>
+                            <label>Thursday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </thu_pm>
+                        <fri_am>
+                            <label>Friday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </fri_am>
+                        <fri_pm>
+                            <label>Friday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </fri_pm>
+                        <sat_am>
+                            <label>Saturday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>140</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </sat_am>
+                        <sat_pm>
+                            <label>Saturday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </sat_pm>
+                        <sun_am>
+                            <label>Sunday AM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>160</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </sun_am>
+                        <sun_pm>
+                            <label>Sunday PM</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>170</sort_order>
+                            <show_in_default>30</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><type>2</type></depends>
+                        </sun_pm>
+                    </fields>
+                </minday>
+                <time translate="label" module="deliverydate">
+                    <label>Delivery Time settings</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable>
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <timesegment>
+                            <label>Time Segment</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[One segment on one line. Ex: <br/>午前中<br />12時～14時<br />14時～16時<br />16時～18時<br/>18時～21時]]></comment>
+                        </timesegment>
+                        <disallowspecificshippingmethods translate="label">
+                            <label>Disallow specific shipping methods</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>110</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </disallowspecificshippingmethods>
+                        <disallowedshippingmethods translate="label">
+                            <label>Disallowed shipping methods</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>120</sort_order>
+                            <source_model>deliverydate/source_method</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </disallowedshippingmethods>
+                    </fields>
+                </time>
+            </groups>
+        </deliverydate>
+    </sections>
+</config>
